@@ -9,13 +9,31 @@ Input: `Hello, there`
 
 Output: `HELLO, THERE`
 
+```swift
+var input = "Hello, there"
+
+var inputUppercased = input.uppercased()
+```
+
 2. **Given a String, return a String alternating between uppercase and lowercase letters**
 
 
 Input: `Hello, there`
 
 Output: `HeLlO, tHeRe`
+```swift
+var newString = ""
+for (index, char) in input.enumerated() {
+   
+    if index % 2 == 0 {
+        newString += char.uppercased()
+    } else {
+        newString += String(char)
+    }
+}
 
+print(newString)
+```
 
 3. **Given a String, return a String with all occurrences of a given letter removed**
 
@@ -23,7 +41,17 @@ Input: `Hello, there`
 
 Output: `Hllo, thr`
 
+```swift
+var noEString = ""
+for char in input {
+    
+    if char != "e" {
+        noEString += String(char)
+    }
+}
 
+print(noEString)
+```
 ## Arrays
 
 
