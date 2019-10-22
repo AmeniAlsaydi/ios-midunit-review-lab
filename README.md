@@ -10,6 +10,8 @@ Input: `Hello, there`
 Output: `HELLO, THERE`
 
 ```swift
+// Answer: 
+
 var input = "Hello, there"
 
 var inputUppercased = input.uppercased()
@@ -22,6 +24,8 @@ Input: `Hello, there`
 
 Output: `HeLlO, tHeRe`
 ```swift
+// Answer: 
+
 var newString = ""
 for (index, char) in input.enumerated() {
    
@@ -42,6 +46,8 @@ Input: `Hello, there`
 Output: `Hllo, thr`
 
 ```swift
+// Answer: 
+
 var noEString = ""
 for char in input {
     
@@ -61,11 +67,26 @@ Input: `[1,5,2,4,1,4]`
 
 Output: `5`
 
+```swift
+// Answer:
+
+let inputArr = [1,5,2,4,1,4]
+
+ let maxNum = inputArr.max()
+
+print(maxNum)
+```
+
 2. **Given an array of type [Int], return the smallest element**
 
 Input: `[1,5,2,4,1,4]`
 
 Output: `1`
+```swift
+// Answer:
+
+let minNum = inputArr.min()
+```
 
 3. **Given an array of type [Int], return its sum**
 
@@ -73,12 +94,35 @@ Input: `[1,5,2,4,1,4]`
 
 Output: `17`
 
+```swift
+//Answer:
+var sum = 0
+
+for num in inputArr {
+    sum += num
+}
+print(sum)
+```
 4. **Given an array of type [Double], return its average**
 
 Input: `[3,4.5,7.5,2,1]`
 
 Output: `3.6`
 
+```swift
+var sum = 0.0
+var counter = 0.0
+var avg: Double = 0
+
+var doubleArray: [Double] = [3,4.5,7.5,2,1]
+
+for num in doubleArray {
+     sum += num
+    counter += 1
+}
+
+avg = sum/counter
+```
 5. **Given an array of type [Double] and a Double, return the sum of all numbers in the array greater than a given number**
 
 Input: `[3,4.5,7.5,2,1], 3`
