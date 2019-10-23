@@ -229,12 +229,40 @@ Input: `nil`
 
 Output: `0`
 
+```swift 
+var optIntArr: [Int?]?
+optIntArr = [nil]
+
+var newIntArray = [Int]()
+
+if let unwrappedIntArr = optIntArr {
+    for num in unwrappedIntArr{
+        if let number = num {
+        newIntArray.append(number)
+        }
+    }
+}
+print(newIntArray)
+```
+
+
 5. **Given an array of type [Int?] and an optional Int, return the sum of all values not equal to the given number.  If the given number is nil, return the sum of all non-nil values.**
 
 Input: `[1, 1, nil, 3, 5, nil, 1, nil, 3, 5, nil, 5, nil, 3], 1`
 
 Output: `24`
 
+```swift 
+for num in inputOfInt {
+    if let unwrappedNum = num {
+        if unwrappedNum != filterNum {
+            newIntArray.append(unwrappedNum)
+        }
+    }
+}
+var sum1 = newIntArray.reduce(0, +)
+print(sum1)
+```
 
 ## Dictionaries
 
