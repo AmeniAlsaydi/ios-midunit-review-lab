@@ -177,6 +177,21 @@ Input: `[nil, "We", "come", nil, "in", "peace"]`
 
 Output: `["We", "come", "in", "peace"]`
 
+```swift
+//Answer:
+
+var noNilArr = [String?]()
+var noNilArr2 = [String]()
+
+for word in strArray {
+    
+    if let nonNil = word {
+        noNilArr2.append(nonNil)
+    }
+}
+
+print(noNilArr2)
+```
 2. **Given an array of type [String?]? return an array of [String] removing all nil values**
 
 Input: `nil`
@@ -188,6 +203,25 @@ Output: `[]`
 Input: `[4, nil, 9, 5, nil]`
 
 Output: `18`
+
+```swift
+//Answer:
+
+var nilArr = [4, nil, 9, 5, nil]
+
+func noNil(arr: [Int?]) -> Int {
+var nonNilSum = 0
+
+for num in arr {
+    guard let nonNil = num
+    else { continue } // continue is used so that it doesnt just return anyting once a nil is found. 
+    nonNilSum += nonNil
+}
+   return nonNilSum
+}
+
+noNil(arr: nilArr)
+```
 
 4. **Given an array of type [Int?]? return the sum of all non-nil values.  Use guard statements in your solution.**
 
