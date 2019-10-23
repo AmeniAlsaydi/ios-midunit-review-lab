@@ -96,6 +96,7 @@ Output: `17`
 
 ```swift
 //Answer:
+
 var sum = 0
 
 for num in inputArr {
@@ -110,6 +111,8 @@ Input: `[3,4.5,7.5,2,1]`
 Output: `3.6`
 
 ```swift
+//Answer:
+
 var sum = 0.0
 var counter = 0.0
 var avg: Double = 0
@@ -129,6 +132,12 @@ Input: `[3,4.5,7.5,2,1], 3`
 
 Output: `12`
 
+```swift
+//Answer:
+
+var newArr = doubleArray.filter({$0 > 3})
+var sumOfDoubles = newArr.reduce(0, {$0 + $1}))
+```
 
 6. **Given an array of type [Double], return the product of all the elements**
 
@@ -136,11 +145,29 @@ Input: `[3,4.5,7.5,2,1]`
 
 Output: `202.5`
 
+```swift
+//Answer:
+
+var doubleArray: [Double] = [3,4.5,7.5,2,1]
+var productOfDoubles = doubleArray.reduce(1, {$0 * $1})
+```
 7. **Given an array of type [Int], return the second smallest value in the array**
 
 Input: `[3,6,1,9,4,8]`
 
 Output: `3`
+
+```swift
+//Answer:
+
+var intArr = [3,6,1,9,4,8]
+
+var sortedIntArr = intArr.sorted()
+
+var secondSmallestInt = sortedIntArr[1]
+
+print(secondSmallestInt)
+```
 
 ## Optionals
 
