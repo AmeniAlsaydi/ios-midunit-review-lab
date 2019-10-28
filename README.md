@@ -230,6 +230,8 @@ Input: `nil`
 Output: `0`
 
 ```swift 
+//Answer:
+
 var optIntArr: [Int?]?
 optIntArr = [nil]
 
@@ -253,6 +255,8 @@ Input: `[1, 1, nil, 3, 5, nil, 1, nil, 3, 5, nil, 5, nil, 3], 1`
 Output: `24`
 
 ```swift 
+//Answer:
+
 for num in inputOfInt {
     if let unwrappedNum = num {
         if unwrappedNum != filterNum {
@@ -272,11 +276,62 @@ Input: `["apple", "apple", "banana", "banana", "banana", "cake", "cake"]`
 
 Output: `["apple", "banana", "cake"]`
 
+```swift
+//Answer:
+
+var inputArray = ["apple", "apple", "banana", "banana", "banana", "cake", "cake"]
+
+var inputAsSet = Set(inputArray) // removes duplicates
+
+var uniqueArr = [String]()
+
+for element in inputArray {
+    if !uniqueArr.contains(element) {
+         uniqueArr.append(element)
+    }
+}
+
+print(uniqueArr)
+```
+
 2. **Given a String, find the most frequently occurring letter**
 
 Input: `Never trust a computer you can't throw out a window ~ Steve Wozniak`
 
-Output: `t`
+Output: `t
+```swift
+// Answer:
+
+input = "Never trust a computer you can't throw out a window ~ Steve Wozniak"
+
+var frequencyDict = [Character: Int]()
+
+for char in input.lowercased() {
+    if char != " " {
+        if let value = frequencyDict[char]{
+            frequencyDict[char] = value + 1
+        } else {
+            frequencyDict[char] = 1
+        }
+    }
+}
+print(frequencyDict)
+
+
+var highestOccurance = 0
+var highestOccuringChar = ""
+
+for (key, value) in frequencyDict {
+    if value > highestOccurance {
+        highestOccurance = value
+        highestOccuringChar = key.description
+        
+    }
+    
+}
+
+print(highestOccuringChar)
+```
 
 3. **Given an array of type [Int], return a copy of the array that contains only elements that appear at least twice**
 
@@ -284,16 +339,71 @@ Input: `[1,1,2,3,3,3,4,5,6,6,7]`
 
 Output: `[1,3,6]`
 
+```swift
+// Answer:
+var duplicatesArr = [Int]()
+//Output: [1,3,6]
+
+for num in numArr {
+    var counter = 0
+    for num1 in numArr {
+        if num == num1 && !duplicatesArr.contains(num){
+            counter += 1
+            if counter > 1 {
+                       duplicatesArr.append(num)
+                   }
+        }
+       
+    }
+}
+
+print(duplicatesArr)
+```
+
 4. **Given a String, find the second most frequently occurring letter in a string**
 
 Input: `Never trust a computer you can't throw out a window ~ Steve Wozniak`
 
 Output `o`
 
+```swift
+// Answer:
+var frequencyDict = [Character: Int]()
+
+for char in input.lowercased() {
+    if char != " " {
+        if let value = frequencyDict[char]{
+            frequencyDict[char] = value + 1
+        } else {
+            frequencyDict[char] = 1
+        }
+    }
+}
+print(frequencyDict)
+
+// finds the highest occurance
+
+var highestOccurance = frequencyDict.values.max() ?? 0
+var secondhighest = 1
+var secondhighestChar: Character = " "
+var highestOccuringChar: Character = " "
+
+for (key, value) in frequencyDict {
+    if value < highestOccurance && value > secondhighest {
+        secondhighest = value
+        secondhighestChar = key
+        
+    }
+    
+}
+
+print(secondhighestChar)
+```
 
 ## Closures
 
-1. **Given an array of type [String], return an array that contains the Strings sorted alphabetically with capital letters first (Swift will do that part automatically)**
+1. **Given an ar
+ay of type [String], return an array that contains the Strings sorted alphabetically with capital letters first (Swift will do that part automatically)**
 
 Input: `["Never", "trust", "a", "computer", "you", "can't", "throw", "out", "a", "window"]`
 
