@@ -402,18 +402,35 @@ print(secondhighestChar)
 
 ## Closures
 
-1. **Given an ar
-ay of type [String], return an array that contains the Strings sorted alphabetically with capital letters first (Swift will do that part automatically)**
+1. **Given an array of type [String], return an array that contains the Strings sorted alphabetically with capital letters first (Swift will do that part automatically)**
 
 Input: `["Never", "trust", "a", "computer", "you", "can't", "throw", "out", "a", "window"]`
 
 Output: `["Never", "a", "a", "can\'t", "computer", "out", "throw", "trust", "window", "you"]`
+
+```swift 
+//Answer: 
+
+var strArray2 = ["Never", "trust", "a", "computer", "you", "can't", "throw", "out", "a", "window"]
+
+var newStrArray2 = strArray2.sorted()
+
+print(newStrArray2)
+```
 
 2. **Given an array of type [String], return an array that contains the Strings sorted by length**
 
 Input: `["Never", "trust", "a", "computer", "you", "can't", "throw", "out", "a", "window"]`
 
 Output: `["a", "a", "you", "out", "Never", "trust", "can\'t", "throw", "window", "computer"]`
+
+```swift 
+//Answer: 
+
+var sortedByLength = strArray2.sorted {$0.count < $1.count}
+
+print(sortedByLength)
+```
 
 3. **Given an array of type [String], return an array containing all Strings at least 4 characters long**
 
