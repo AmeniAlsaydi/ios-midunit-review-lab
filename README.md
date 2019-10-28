@@ -438,12 +438,30 @@ Input: `["Never", "trust", "a", "computer", "you", "can't", "throw", "out", "a",
 
 Output: `["Never", "trust", "computer", "can\'t", "throw", "window"]`
 
+```swift 
+// Answer:
+
+var arLeeat4Char = strArray2.filter{$0.count >= 4}
+print(arLeeat4Char)
+```
+
 4. **Given an array of type [String], return a String containing all of the Strings from the array combined and separated by spaces.  Do this first without using the `joined(separator:) method`**
 
 Input: `["Never", "trust", "a", "computer", "you", "can't", "throw", "out", "a", "window"]`
 
 Output: `Never trust a computer you can't throw out a window`
 
+```swift 
+// Answer:
+
+var combinedArray = ""
+
+for word in strArray2 {
+    combinedArray += (word + " ")
+}
+
+print(combinedArray)
+```
 
 ## Enums
 
